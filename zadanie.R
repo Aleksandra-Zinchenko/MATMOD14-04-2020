@@ -43,8 +43,42 @@ dna_at
 
 #4
 letters
-abc=c(letters)
-abc=c(sample(letters,10000,replace = T))
-summary(abc)
-aei = abc[abc %in% c("A","E","I","O","U")]
-length(aei)
+sample(letters,size = 1000, replace = TRUE)
+sampleabc = c(sample(letters, size = 1000, replace = TRUE))
+summary(sampleabc)
+glasnie = sampleabc[sampleabc %in% c("a","e","i","o","u")] 
+length(glasnie)
+
+
+#5
+
+iris
+setosa=c(iris$Petal.Length[1:50])
+versicolor=c(iris$Petal.Length[51:100])
+virginica=c(iris$Petal.Length[101:150])
+mean(setosa)
+mean(versicolor)
+mean(virginica)
+species=c(mean(setosa),mean(versicolor),mean(virginica))
+f=factor(species)
+names(f)<-c("setosa","versicolor", "virginica")
+f
+
+
+
+#6
+median <- function(x) { 
+  z=sort(x) 
+  if((length(z)%%2)!=0){ 
+    result = z[(length(x)/2)+1] 
+  } 
+  else 
+    result = (z[length(x)/2]+z[length(x)/2+1])/2 
+  return(result) 
+} 
+median(iris$Petal.Width) 
+
+
+#7
+iris
+
