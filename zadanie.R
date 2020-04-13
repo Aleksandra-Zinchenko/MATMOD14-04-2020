@@ -70,15 +70,45 @@ f
 median <- function(x) { 
   z=sort(x) 
   if((length(z)%%2)!=0){ 
-    result = z[(length(x)/2)+1] 
-  } 
+    result = z[(length(x)/2)+1] } 
   else 
     result = (z[length(x)/2]+z[length(x)/2+1])/2 
-  return(result) 
-} 
+  return(result)} 
+
+#primer
 median(iris$Petal.Width) 
 
 
-#7
+#7.1
 iris
+x=iris$Sepal.Length[1:50]
+y=iris$Petal.Length[1:50]
+plot(x,y,main="setosa", xlab="Sepal.Length",ylab="$Petal.Length", col="red")
 
+
+#7.2
+iris
+x=iris$Sepal.Length[51:100]
+y=iris$Petal.Length[51:100]
+plot(x,y,main="versicolor", xlab="Sepal.Length",ylab="$Petal.Length", col="blue")
+
+#7.3
+iris
+x=iris$Sepal.Length[101:150]
+y=iris$Petal.Length[101:150]
+plot(x,y,main="virginica", xlab="Sepal.Length",ylab="$Petal.Length", col="brown")
+
+
+#8
+library("ggplot2")
+diamonds
+levels(factor(diamonds$clarity))
+x=levels(factor(diamonds$clarity))
+y=vector()
+(diamonds$price>1000)
+for (i in 1:length(x)) {y[i]=mean(diamonds$price[(diamonds$price>1000) & diamonds$clarity==x[i]])}
+
+x
+y
+                
+                    
